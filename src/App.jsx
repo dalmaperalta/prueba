@@ -1,10 +1,11 @@
-import './App.css'
+import style from './App.module.css'
 import db from '../db/firebase-config'
 import { addDoc, collection, getDocs } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 import ListItems from './components/ListItems/ListItems'
 import { Routes, Route} from 'react-router-dom'
 import ItemDetail from './components/ItemDetail/ItemDetail'
+import Navbar from './components/Navbar/Navbar'
 
 function App() {
   const [items, setItems] = useState([])
@@ -48,14 +49,16 @@ function App() {
 
   return (
     <div>
+      <Navbar />
       <Routes>
-        <Route path="/" element= {<h1>my app</h1>} />
+        <Route path="/" element= {<h1 className={style.huellas}>BIENVENIDOS A HUELLAS</h1>} />
         <Route path="/items" element= {<ListItems items={items} setItems ={setItems}  deleteItem = {deleteItem}/>} />
         <Route path="/items/:id" element= {<ItemDetail />} />
         <Route path="*" element= {<h1>404 not found</h1>} />
-      </Routes>
 
-    
+      </Routes>
+     
+        
       <button onClick={addItem}>Agregar item</button>
 
     </div>

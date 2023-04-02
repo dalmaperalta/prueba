@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 5rem;
+    background-color: rgb(191, 0, 255);
+    
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
